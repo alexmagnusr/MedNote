@@ -1,0 +1,40 @@
+﻿<h3>Parâmetros</h3>
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+    </div>
+    <div class="panel-body">
+
+        <fieldset>
+
+            <form role="form" name="formParametros" ng-submit="salvar()" parsley-validate="">
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group form-group--float form-group--float-center">
+                                <label>Valor por KM</label>
+                                <input type="text" required="required" class="form-control" style="text-align: right" data-ng-model="parametrizacao.ValorKM" placeholder="Valor por KM" ui-number-mask>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group form-group--float form-group--float-center">
+                                <label>Valor por KM (despesas)</label>
+                                <input type="text" required="required" class="form-control" style="text-align: right"  data-ng-model="parametrizacao.ValorKMDespesa"  placeholder="Valor por KM (Despesas)" ui-number-mask>
+                            </div>
+                        </div>
+                    </div>
+ 
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                </div>
+            </form>
+
+
+        </fieldset>
+    </div>
+</div>
+
+

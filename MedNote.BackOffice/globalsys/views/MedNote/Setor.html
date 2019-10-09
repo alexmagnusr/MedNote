@@ -1,0 +1,273 @@
+﻿<style>
+    .table-fixed {
+        width: 100%;
+    }
+
+        .table-fixed tr:after {
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        .table-fixed > thead,
+        .table-fixed > tbody,
+        .table-fixed > tbody > tr,
+        .table-fixed > tbody > tr:after,
+        .table-fixed > thead > tr,
+        .table-fixed > thead > tr > th {
+            display: block;
+        }
+
+            .table-fixed > thead > th {
+                height: 40px;
+            }
+
+        .table-fixed > tbody {
+            height: 210px;
+            overflow-y: auto;
+        }
+
+            .table-fixed > tbody > tr > td, .table-fixed > thead > tr > th {
+                width: 25%;
+                float: left;
+            }
+</style>
+<h3>Setor</h3>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="col-sm-13">
+            <div class="row">
+                <div class="col-sm-8">
+                    <button type="button" class="mb-sm btn btn-success" ng-click="abrirModal()">
+                        <em class="fa icon-plus fa-lg"></em> Novo
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-body">
+        <fieldset>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <form role="form">
+                        <input class="form-control form-control-rounded" ng-model="searchText" placeholder="Consultar" type="text" />
+                    </form>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+
+            <table id="datatable1" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <span>Descrição</span>
+                        </th>
+                        <th>
+                            <span>Estabelecimento</span>
+                        </th>
+                        <th>
+                            <span>Cliente</span>
+                        </th>
+                        <th>
+                            <span>Tipo de Setor</span>
+                        </th>
+                        <th>
+                            <span>Qtd. Leitos</span>
+                        </th>
+                        <th>
+                            <span>Data de Cadastro</span>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr name="pagSetores" dir-paginate="item in setores | filter:searchText | itemsPerPage: 10 track by $index">
+                        <td>{{item.Nome}}</td>
+                        <td>{{item.EstabelecimentosNome}}</td>
+                        <td>{{item.ClienteNome}}</td>
+                        <td>{{item.nomeTipoSetor}}</td>
+                        <td>{{item.QtdLeitos}}</td>
+                        <td>{{item.DataCadastro}}</td>
+                        <!--<td>
+                            <button type="button" class="btn btn-primary btn-sm" data-ng-click="abrirPainelLeitos(item)">
+                                <em class="fa fa-calendar"></em> Abrir Painel
+                            </button>
+                        </td>-->
+                        <td>
+                            <button type="button" class="btn btn-green btn-sm" data-ng-click="editar(item)">
+                                <em class="fa fa-edit fa-lg"></em> Editar
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm" data-ng-click="deletar(item)">
+                                <em class="fa fa-trash fa-lg"></em> <b>Remover</b>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div class="other-controller">
+                <div class="text-center">
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="vendor/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+
+
+<!--MODAL-->
+<script type="text/ng-template" id="modalSetor">
+    <div>
+        <form role="form" name="formSetor" ng-submit="salvar()" parsley-validate="">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">Fechar</button>
+                <center><h3 class="modal-title">{{tituloModal}}</h3></center>
+            </div>
+            <div class="modal-body">
+                <div class="tabbable tabs-below" ng-init="selectedTab = 1;">
+
+                    <ul class="nav nav-tabs nav-justified">
+                        <li ng-class="{active: selectedTab == 1}">
+                            <a ng-click="selectedTab = 1;">Setor</a>
+                        </li>
+                        <li ng-class="{active: selectedTab == 2}">
+                            <a ng-click="selectedTab = 2;">Leitos</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" ng-show="selectedTab == 1">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group form-group--float form-group--float-center">
+                                    <label>Descrição</label>
+                                    <input type="text" required="required" class="form-control" data-ng-model="setor.Nome" placeholder="Setor">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group form-group--float form-group--float-center">
+                                    <label>Estabelecimento</label>
+                                    <select ng-init="loadEstabelecimento()" required="required" ng-model="setor.Estabelecimento" ng-options="estabelecimento.Codigo as estabelecimento.Nome for estabelecimento in estabelecimentos" class="form-control">
+                                        <option value="">Selecione um estabelecimento</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group form-group--float form-group--float-center">
+                                    <label>Tipo de Setor</label>
+                                    <select ng-init="loadTipoSetor()" required="required" ng-model="setor.TipoSetor" ng-options="tiposetor.TipoSetor as tiposetor.TipoSetorDesc for tiposetor in tiposDeSetor" class="form-control">
+                                        <option value="">Selecione um Tipo de Setor</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-content" ng-show="selectedTab == 2">
+
+                        <div class="row">
+
+                            <div class="col-sm-4">
+                                <div class="form-group form-group--float form-group--float-center">
+                                    <label>De</label>
+                                    <input type="number" max=99 min=1 required="required" class="form-control" data-ng-model="setor.QtdLeitoInicio" placeholder="1">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-8">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group--float form-group--float-center">
+                                        <label>Até</label>
+                                        <input type="number" max=100 min=1 required="required" class="form-control" data-ng-model="setor.QtdLeitoFim" placeholder="10">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6" style="margin-top:25px;">
+                                    <button class="btn btn-success" type="button" ng-click="gerarLeito()">Gerar leitos</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table id="datatable1" class="table table-striped table-hover table-fixed">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <span>Leitos</span>
+                                        </th>
+                                        <th>
+                                            <span>Liberado ? </span>
+                                        </th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody style="overflow-y: auto;">
+                                    <tr name="pagLeitos" dir-paginate="item in setor.Leitos | filter:searchText | itemsPerPage: 100 track by $index">
+                                        <td>{{item.Identificador}}</td>
+                                        <td>{{item.Bl_Liberado == true || item.Bl_Liberado == "Sim" ? "Sim" : "Não" }}</td>
+                                        <td>
+                                            <button type="button" class="mb-sm btn btn-green btn-justify" data-ng-click="editarLeito(item)">
+                                                <em class="fa fa-edit fa-lg"></em> Editar
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="mb-sm btn btn-danger btn-justify" data-ng-click="deletarLeito(item)">
+                                                <em class="fa fa-trash fa-lg"></em> Remover
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</script>
+<!-- MODAL Editar Leito -->
+<script type="text/ng-template" id="modalLeito">
+    <div>
+        <form role="form" name="formLeito" ng-submit="salvarLeito()" parsley-validate="">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="fecharModalLeito()" class="close">Fechar</button>
+                <center><h3 class="modal-title">{{tituloModalItem}}</h3></center>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Identificador</label>
+                            <input type="text" required="required" class="form-control" data-ng-model="leito.Identificador">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                <button class="btn btn-oval btn-danger" type="button" ng-click="fecharModalLeito()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</script>
+<!--MODAL Editar Leito-->

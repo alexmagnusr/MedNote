@@ -1,0 +1,198 @@
+<h3>Nível de Aprovação</h3>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="col-sm-13">
+            <div class="row">
+                <div class="col-sm-8">
+                    <button type="button" class="mb-sm btn btn-success" ng-click="abrirModal()">
+                        <em class="fa icon-plus fa-lg"></em> Novo
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-body">
+        <fieldset>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <form role="form">
+                        <input class="form-control form-control-rounded" ng-model="searchText" placeholder="Consultar" type="text" />
+                    </form>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+
+            <div class="col-sm-8">
+                <button type="button" class="mb-sm btn btn-inverse" ng-click="exportData()">
+                    <em class="fa fa-file-excel-o"></em> Exportar para Excel
+                </button>
+            </div>
+
+            <table id="datatable1" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <span>Centro de Custo</span>
+                        </th>
+                        <th>
+                            <span>Descrição</span>
+                        </th>
+                        <th>
+                            <span>Nível de Aprovação</span>
+                        </th>
+                        <th>
+                            <span>Requer aprovação de todos?</span>
+                        </th>
+
+                        <th>
+                            <span>Data de Cadastro</span>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="item in classes | filter:searchText | itemsPerPage: 5 track by $index">
+                        <td>{{item.NomeCentroDeCusto}}</td>
+                        <td>{{item.Descricao}}</td>
+                        <td>{{item.Nivel}}</td>
+                        <td>{{item.TodosAprovam}}</td>
+
+                        <td>{{item.DataCadastro}}</td>
+                        <td style="min-width: 50px; width: 50px;">
+                            <button type="button" class="mb-sm btn btn-green btn-justify" data-ng-click="abrirModalAprovadores(item)">
+                                <em class="fa fa-bars fa-lg"></em> Aprovadores
+                            </button>
+                        </td>
+                        <td style="min-width: 50px; width: 50px;">
+                            <button type="button" class="mb-sm btn btn-green btn-justify" data-ng-click="editar(item)">
+                                <em class="fa fa-edit fa-lg"></em> Editar
+                            </button>
+                        </td>
+                        <td style="min-width: 50px; width: 50px;">
+                            <button type="button" class="mb-sm btn btn-danger btn-justify" data-ng-click="deletar(item)">
+                                <em class="fa fa-trash fa-lg"></em> Remover
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div class="other-controller">
+                <div class="text-center">
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="vendor/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+
+<!--MODAL-->
+<script type="text/ng-template" id="modalCadastro">
+    <div>
+        <form role="form" name="formContrato" ng-submit="salvar()" parsley-validate="">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">&times;</button>
+                <center><h3 class="modal-title">{{tituloModal}}</h3></center>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Descrição</label>
+                            <input type="text" required="required" class="form-control" data-ng-model="classe.Descricao" placeholder="Descrição">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group mb">
+                            <label>Tipo de Reembolso</label>
+                            <select class="chosen-select input-md" required chosen="" ng-init="loadCentros()" ng-model="classe.CentroCusto"
+                                    ng-options="centroDeCusto.Nome for centroDeCusto in Centros" width="'100%'">
+                                <option value="">Selecione o centro de custo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Requerer aprovação de Todos?</label>
+                            <select required="required" ng-model="classe.TodosAprovam" class="form-control">
+                                <option value="Não">Não</option>
+                                <option value="Sim">Sim</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Nível de aprovação</label>
+                            <input type="number" required="required" class="form-control" data-ng-model="classe.Nivel" placeholder="Nível de aprovação" ui-number>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+
+
+<script type="text/ng-template" id="modalAprovadores">
+    <div>
+        <form role="form" name="formAprovadores" ng-submit="salvar()" parsley-validate="">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">&times;</button>
+                <center><h3 class="modal-title">{{tituloModalAprovador}}</h3></center>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group mb">
+                            <label>Aprovadores</label>
+                            <select class="chosen-select input-md" required chosen="" ng-init="loadAprovadores()" ng-model="aprovador.Usuario"
+                                    ng-options="usuario.Nome for aprovador in Aprovadores" width="'100%'">
+                                <option value="">Selecione um aprovador</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group mb">
+                            <label></label>
+                            <button class="btn btn-oval btn-success" type="button">Adicionar Aprovador</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Fechar</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+<!--MODAL-->

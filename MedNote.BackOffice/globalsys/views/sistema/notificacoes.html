@@ -1,0 +1,161 @@
+﻿<h3>Notificações</h3>
+
+
+<div class="panel panel-default">
+
+    <div class="panel-body" ng-init="listarTodasAsNotificacoes()()">
+        <br />
+        <fieldset>
+            <div class="form-group">
+
+                <div class="col-sm-12">
+                    <form role="form">
+                        <input class="form-control form-control-rounded" ng-model="searchText" placeholder="Consultar" type="text" />
+                    </form>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="col-sm-1">
+                    <h4>
+                        Ações
+
+                    </h4>
+                </div>
+                <div class="col-sm-2">
+                    <div class="radio c-radio c-radio-nofont">
+                        <label>
+                            <input ng-model="tipo" type="radio" ng-checked="true" name="a" value="todos" />
+                            <span></span>Todos
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="radio c-radio c-radio-nofont">
+                        <label>
+                            <input type="radio" ng-model="tipo" name="a" value="true" />
+                            <span></span>Lidas
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="radio c-radio c-radio-nofont">
+                        <label>
+                            <input type="radio" ng-model="tipo" name="a" value="false" />
+                            <span></span>Não lidas
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                </div>
+
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="col-sm-8">
+                <button type="button" class="mb-sm btn btn-inverse" ng-click="exportData()">
+                    <em class="fa fa-file-excel-o"></em> Exportar para Excel
+                </button>
+            </div>
+
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th><span>Titulo</span></th>
+                        <th><span>Descrição</span></th>
+                        <th><span>Data</span></th>
+                        <th>Marcar com visualizado?</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="not in notificacoes | filter:searchText | itemsPerPage: 10">
+                        <td><img ng-if="not.Visualizado" width="30" height="30" src="../app/img/envelope.png" /><img ng-if="!not.Visualizado" width="30" height="30" src="../app/img/email.png" /></td>
+                        <td>{{not.Nome}}</td>
+                        <td>{{not.Descricao}}</td>
+                        <td>{{not.Data}}</td>
+                        <td><button ng-disabled="not.Visualizado" ng-click="salvar(not)" class="mb-sm btn btn-success" type="button"><i class="fa fa-check"></i> Sim</button></td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div class="other-controller">
+
+                <div class="text-center">
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="vendor/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<!--MODAL-->
+<script type="text/ng-template" id="modalAuditoria">
+    <div>
+        <form role="form">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">&times;</button>
+                <center><h3 class="modal-title">Detalhes</h3></center>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Usário: </label>
+                            <label>{{auditoria.Nome}}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>
+                                Data: <label>
+                                    <label>{{auditoria.Data}}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>
+                                Ação: <label>
+                                    <label>{{auditoria.Acao}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Código do registro: </label>
+                            <label>{{auditoria.CodigoRegistro}}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>
+                                Classe: <label>
+                                    <label>{{auditoria.NomeCompletoEntidade}}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>
+                                IP: <label>
+                                    <label>{{auditoria.IP}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <textarea style="resize:vertical !important;" class="form-control" rows="5" ng-model="auditoria.Descricao"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</script>

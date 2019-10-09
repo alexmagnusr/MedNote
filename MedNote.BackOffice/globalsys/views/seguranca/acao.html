@@ -1,0 +1,109 @@
+﻿<h3>Ações</h3>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="col-sm-13">
+            <div class="row">
+                <div class="col-sm-8">
+                    <button type="button" class="mb-sm btn btn-success" ng-click="abrirModal()">
+                        <em class="fa icon-plus fa-lg"></em>Novo
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-body">
+        <fieldset>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <form role="form">
+                        <input class="form-control form-control-rounded" ng-model="searchText" placeholder="Consultar" type="text" />
+                    </form>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <table border="0" class="table table-striped table-hover" ng-init="consultar()">
+                <thead>
+                    <tr>
+
+                        <th>
+                            <span>Módulo/Página</span>
+                        </th>
+                        <th>
+                            <span>Ação</span>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="ctReg in registros | filter:searchText | itemsPerPage: 5 track by $index">
+                        <td>{{ctReg.Funcao}}</td>
+                        <td>{{ctReg.Nome}}</td>
+                        <td>
+                            <button type="button" class="mb-sm btn btn-green btn-justify" data-ng-click="editar(ctReg)">
+                                <em class="fa fa-edit fa-lg"></em>Editar
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="mb-sm btn btn-danger btn-justify" data-ng-click="deletar(ctReg)">
+                                <em class="fa fa-trash fa-lg"></em>Remover
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div class="other-controller">
+
+                <div class="text-center">
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="vendor/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+
+<!--MODAL-->
+<script type="text/ng-template" id="modalACAO">
+    <div>
+        <form role="form" name="formRegistro" ng-submit="salvar()" parsley-validate="">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">Fechar</button>
+                <center><h3 class="modal-title">{{tituloModal}}</h3></center>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Função</label>
+                            <select ng-init="consultarFuncoes()" class="chosen-select input-md" required chosen="" ng-model="registro.Funcao" ng-options="funcao.Nome for funcao in funcoes" width="'100%'">
+                                <option value="">Selecione uma função</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Nome</label>
+                            <input type="text" required="required" class="form-control" data-ng-model="registro.Nome" placeholder="Nome">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Ref</label>
+                            <input type="text" required="required" class="form-control" data-ng-model="registro.Ref" placeholder="Ref">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</script>
+<!--MODAL-->

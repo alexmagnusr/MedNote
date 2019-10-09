@@ -1,0 +1,81 @@
+﻿<style>
+    body {
+        background: url('../app/img/2.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .container {
+        height: 200px !important;
+        width: 200px !important;
+        margin: 0 auto !important;
+        border-radius: 0% !important;
+        text-align: center;
+        border: 1px solid #FFF;
+    }
+
+        .container:hover {
+            background-color: #ACC608;
+            height: 200px !important;
+            width: 200px !important;
+            margin: 0 auto !important;
+            border-radius: 0% !important;
+            text-align: center;
+            border: 1px solid #FFF;
+        }
+
+    .centro {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -60px;
+        margin-left: -60px;
+    }
+
+    .titulo_modulo {
+        color: #FFF;
+        margin-bottom: 3px;
+        font-weight: 300 !important;
+    }
+
+    .subtitulo_modulo {
+        color: #FFF;
+        margin-bottom: 3px;
+        font-weight: 300 !important;
+    }
+
+    .nome_modulo {
+        color: #FFF;
+        padding-bottom: 3px;
+        font-weight: 300 !important;
+    }
+</style>
+
+<div style="margin-bottom:80px;">
+    <center>
+
+        <h1 class="titulo_modulo"><strong>VIX</strong></h1>
+        <h3 class="subtitulo_modulo">Selecione um módulo para gerenciar:</h3>
+
+    </center>
+</div>
+
+<div class="col-md-12" ng-controller="moduloController" ng-init="loadModulos()">
+
+    <div class="col-md-4" ng-repeat="md in modulos">
+        <a ng-click="selecionarModulo(md)" style="text-decoration: none;">
+            <div class="container">
+                <center>
+                    <h2 class="nome_modulo">{{md.Nome}}</h2>
+                    <img src="{{md.Imagem}}" />
+                </center>
+            </div>
+        </a>
+    </div>
+</div>
+
+

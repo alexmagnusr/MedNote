@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="globalsys">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="{{app.description}}">
+    <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+    <title data-ng-bind="::pageTitle()">MedNote - Plataforma </title>
+    <!-- Bootstrap styles-->
+    <link rel="stylesheet" href="app/css/bootstrap.css" data-ng-if="!app.layout.isRTL">
+    <link rel="stylesheet" href="app/css/bootstrap-rtl.css" data-ng-if="app.layout.isRTL">
+    <!-- Application styles-->
+    <link rel="stylesheet" href="app/css/app.css" data-ng-if="!app.layout.isRTL">
+    <link rel="stylesheet" href="app/css/app-rtl.css" data-ng-if="app.layout.isRTL">
+    <link href="vendor/sweetalert/dist/sweetalert.css" rel="stylesheet" />
+    <link href="vendor/loader/jquery.loader.css" rel="stylesheet" />
+    <!-- Themes-->
+    <link rel="stylesheet" ng-href="{{app.layout.theme}}" data-ng-if="app.layout.theme">
+
+
+    <script src="app/js/base.js"></script>
+    <script src="app/js/app.js"></script>
+
+    <script src="vendor/angular-local-storage/angular-local-storage.min.js"></script>
+    <script src="vendor/angular-dynamic-locale/tmhDynamicLocale.min.js"></script>
+    <script src="vendor/pagination/dirPagination.js"></script>
+    <script src="vendor/timeline/codebase/dhtmlxscheduler.js"></script>
+    <link href="vendor/timeline/codebase/dhtmlxscheduler.css" rel="stylesheet" />
+    <script src="vendor/timeline/codebase/ext/dhtmlxscheduler_timeline.js"></script>
+    <script src="vendor/timeline/codebase/ext/dhtmlxscheduler_minical.js"></script>
+    <script src="vendor/timeline/codebase/locale/locale_pt.js"></script>
+    <script src="vendor/rw-money-mask.min.js"></script>
+    <script src="vendor/moment/min/moment-with-locales.min.js"></script>
+    <!--<script src="vendor/timeline/codebase/ext/dhtmlxscheduler_tooltip.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+
+    <script src="vendor/signalr/jquery.signalR-2.2.2.min.js"></script>
+    <!--IP ou ENDEREÇO DA API-->
+    <!--IP ou ENDEREÇO DA API-->
+    <script src="globalsys/globalsys.js"></script>
+
+    <script src="vendor/parsleyjs/language/pt-BR.js"></script>
+    <script src="vendor/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="vendor/mask/jquery.maskedinput-1.1.4.pack.js"></script>
+    <script src="vendor/mask/angular-input-masks.js"></script>
+
+    <script src="vendor/base64/angular-base64.min.js"></script>
+    <script src="vendor/chosen_v1.2.0/chosen.jquery.min.js"></script>
+    <link href="vendor/chosen_v1.2.0/chosen.min.css" rel="stylesheet" />
+    <script src="vendor/angular-chosen-localytics/dist/angular-chosen.js"></script>
+    <script src="vendor/desktopify/desktopify/angular-notification.js"></script>
+    <script src="vendor/loader/jquery.loader.js"></script>
+    <link href="vendor/parsleyjs/dist/parsley.css" rel="stylesheet" />
+    <script src="vendor/ng-mask/dist/ngMask.min.js"></script>
+
+    <!--TimePicker-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.min.js"></script>
+
+    <!--Teste Accordion-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="vendor/timepickerpop-master/src/timepickerpop.js"></script>
+    <script src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>
+
+    <!--Provider-->
+    <script src="globalsys/services/authInterceptorService.js"></script>
+    <script src="globalsys/services/tokensManagerService.js"></script>
+
+    <!--Provider-->
+    <!--services-->
+
+    <script src="globalsys/services/sistema/notificacoesService.js"></script>
+    <script src="globalsys/services/sistema/logErroService.js"></script>
+    <script src="globalsys/services/sistema/auditoriaService.js"></script>
+    <script src="globalsys/services/sistema/utilService.js"></script>
+    <script src="globalsys/services/sistema/moduloService.js"></script>
+    <script src="globalsys/services/sistema/menuService.js"></script>
+    <script src="globalsys/services/sistema/permissionService.js"></script>
+
+    <script src="globalsys/services/authService.js"></script>
+    <script src="globalsys/services/seguranca/usuarioService.js"></script>
+    <script src="globalsys/services/seguranca/grupoService.js"></script>
+    <script src="globalsys/services/seguranca/membroService.js"></script>
+    <script src="globalsys/services/seguranca/permissoesService.js"></script>
+    <script src="globalsys/services/seguranca/permissoesUsuariosService.js"></script>
+    <script src="globalsys/services/seguranca/acaoService.js"></script>
+    <script src="globalsys/services/seguranca/funcaoService.js"></script>
+    <script src="globalsys/services/seguranca/clienteService.js"></script>
+    <script src="globalsys/services/seguranca/especialidadeService.js"></script>
+    <script src="globalsys/services/seguranca/grupoService.js"></script>
+    <script src="globalsys/services/seguranca/estabelecimentoService.js"></script>
+    <script src="globalsys/services/seguranca/tipoSetorClienteService.js"></script>
+    <script src="globalsys/services/seguranca/setorUsuarioService.js"></script>
+
+    <script src="globalsys/services/MedNote/tipoSetorService.js"></script>
+    <script src="globalsys/services/MedNote/setorService.js"></script>
+    <script src="globalsys/services/MedNote/leitoService.js"></script>
+    <script src="globalsys/services/MedNote/parametrosBaseService.js"></script>
+    <script src="globalsys/services/MedNote/admissaoService.js"></script>
+    <script src="globalsys/services/MedNote/dispositivoService.js"></script>
+    <script src="globalsys/services/MedNote/painelService.js"></script>
+
+    <script src="globalsys/services/cadastroinicial/dadosGeraisService.js"></script>
+    <script src="globalsys/services/cadastroinicial/gerenciaService.js"></script>
+    <script src="globalsys/services/cadastroinicial/projetoService.js"></script>
+    <script src="globalsys/services/cadastroinicial/classeFinanceiraService.js"></script>
+    <script src="globalsys/services/cadastroinicial/nivelAprovacaoService.js"></script>
+    <script src="globalsys/services/cadastroinicial/parametrizacaoService.js"></script>
+
+    <script src="globalsys/services/oilegas/contratoService.js"></script>
+    <!--services-->
+    <!--controllers-->
+    <script src="globalsys/controllers/seguranca/usuarioController.js"></script>
+    <script src="globalsys/controllers/seguranca/grupoController.js"></script>
+    <script src="globalsys/controllers/seguranca/membroController.js"></script>
+    <script src="globalsys/controllers/seguranca/pemissoesController.js"></script>
+    <script src="globalsys/controllers/seguranca/permissoesUsuariosController.js"></script>
+    <script src="globalsys/controllers/seguranca/funcaoController.js"></script>
+    <script src="globalsys/controllers/seguranca/notificacoesController.js"></script>
+    <script src="globalsys/controllers/seguranca/acaoController.js"></script>
+    <script src="globalsys/controllers/seguranca/trocarSenhaController.js"></script>
+    <script src="globalsys/controllers/seguranca/clienteController.js"></script>
+    <script src="globalsys/controllers/seguranca/especialidadeController.js"></script>
+    <script src="globalsys/controllers/seguranca/grupoController.js"></script>
+    <script src="globalsys/controllers/seguranca/estabelecimentoController.js"></script>
+
+    <script src="globalsys/controllers/MedNote/tipoSetorController.js"></script>
+    <script src="globalsys/controllers/MedNote/setorController.js"></script>
+    <script src="globalsys/controllers/MedNote/parametrosBaseController.js"></script>
+    <script src="globalsys/controllers/MedNote/admissaoMasterController.js"></script>
+    <script src="globalsys/controllers/MedNote/dispositivoMasterController.js"></script>
+    <script src="globalsys/controllers/MedNote/painelController.js"></script>
+    <script src="globalsys/controllers/MedNote/admissaoController.js"></script>
+
+    <script src="globalsys/controllers/loginController.js"></script>
+    <script src="globalsys/controllers/sobreController.js"></script>
+
+    <script src="globalsys/controllers/sistema/logErroController.js"></script>
+    <script src="globalsys/controllers/sistema/auditoriaController.js"></script>
+    <script src="globalsys/controllers/sistema/moduloController.js"></script>
+
+    <script src="globalsys/controllers/cadastroinicial/gerenciaController.js"></script>
+    <script src="globalsys/controllers/cadastroinicial/projetoController.js"></script>
+    <script src="globalsys/controllers/cadastroinicial/classeFinanceiraController.js"></script>
+    <script src="globalsys/controllers/cadastroinicial/nivelAprovacaoController.js"></script>
+    <script src="globalsys/controllers/cadastroinicial/parametrizacaoController.js"></script>
+
+
+    <script src="globalsys/controllers/oilegas/implementoController.js"></script>
+
+
+</head>
+
+<body data-ng-class="{ 'layout-fixed' : app.layout.isFixed, 'aside-collapsed' : app.layout.isCollapsed, 'layout-boxed' : app.layout.isBoxed, 'layout-fs': app.useFullLayout, 'hidden-footer': app.hiddenFooter, 'layout-h': app.layout.horizontal, 'aside-float': app.layout.isFloat, 'offsidebar-open': app.offsidebarOpen, 'aside-toggled': app.asideToggled, 'aside-collapsed-text': app.layout.isCollapsedText}">
+    <div data-preloader></div>
+    <div class="wrapper" data-ui-view="" data-autoscroll="false"></div>
+
+</body>
+
+</html>

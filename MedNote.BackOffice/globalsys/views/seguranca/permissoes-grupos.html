@@ -1,0 +1,65 @@
+﻿<h3>Permissões do Perfil</h3>
+<toaster-container toaster-options="{'position-class': 'toast-bottom-center', 'close-button':true}"></toaster-container>
+<div class="panel panel-default ng-scope">
+    <div class="panel-body">
+        <form role="form" name="formPermissoesGrupo" ng-submit="salvar()" parsley-validate="">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Perfil</label>
+                            <select ng-init="loadGrupos()" required="required" ng-model="permissao.Grupo" ng-options="grupo.Codigo as grupo.Descricao for grupo in grupos" class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Modulo</label>
+                            <select ng-init="loadModulo()" required="required" ng-change="loadPagina(permissao.Modulo)" ng-model="permissao.Modulo" ng-options="modulo.Codigo as modulo.Nome for modulo in modulos" class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Página</label>
+                            <select required="required" ng-change="loadAcoesDisponiveis(permissao.Pagina)" ng-model="permissao.Pagina" ng-options="pagina.Codigo as pagina.Nome for pagina in paginas" class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Ações Disponíveis</label>
+                            <select class="form-control" multiple style="height:250px;" ng-change="selecionandoAcoesDisponiveis(acaoDispo)" ng-model="acaoDispo" ng-options="acao.Codigo as acao.Nome for acao in acoesDisponiveis">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <br /><br />
+                            <button class="btn btn-pill-left btn-danger" type="button" ng-click="removeAcoesSelecionadosAoGrupo()">Remover</button> <br /><br />
+                            <button class="btn btn-pill-right btn-success" type="button" ng-click="addAcoesSelecionadosAoGrupo()">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Ações do Perfil</label>
+                            <select class="form-control" multiple style="height:250px;" ng-change="selecionandoAcoesJaAdicionadosNoGrupo(acaoAdd)" ng-model="acaoAdd" ng-options="acao.Codigo as acao.Nome for acao in acoesAdicionadas">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

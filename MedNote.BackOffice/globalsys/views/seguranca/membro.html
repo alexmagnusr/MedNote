@@ -1,0 +1,60 @@
+﻿<h3>Membros do Grupo</h3>    
+<toaster-container toaster-options="{'position-class': 'toast-bottom-center', 'close-button':true}"></toaster-container>
+<div class="panel panel-default ng-scope">
+    <div class="panel-body">
+        <form role="form" name="formMembro" ng-submit="salvar()" parsley-validate="">           
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Grupo</label>
+                            <select ng-bind-html="true" ng-init="loadGrupos()" required="required" ng-model="membro.Grupo" 
+                                    ng-options="grupo.Codigo as grupo.NomeFormatado for grupo in grupos"
+                                    class="form-control"> 
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Tipo de Usuário: </label>
+                            
+                            <label data-ng-repeat="tipoCol in tiposColaborador" class="radio-inline c-radio">
+                                <input id="tipoColaborador" type="radio" ng-model="membro.TpColaborador" name="i-radio" value="{{tipoCol.Id}}" ><span class="fa fa-circle"></span> {{tipoCol.Descricao}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Membros Disponíveis</label>
+                            <select class="form-control" multiple style="height:250px;" ng-change="selecionandoUsuariosDisponiveis(usuDispo)"  ng-model="usuDispo" ng-options="usuario.Codigo as usuario.Nome for usuario in usuariosDisponiveis">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group form-group--float form-group--float-center">  
+                            <br /><br />                          
+                            <button class="btn btn-pill-left btn-danger" type="button" ng-click="removeUsuariosSelecionadosAoGrupo()">Remover</button> <br /><br />
+                            <button class="btn btn-pill-right btn-success" type="button" ng-click="addUsuariosSelecionadosAoGrupo()">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Membros do Grupo</label>
+                            <select class="form-control" multiple style="height:250px;" ng-change="selecionandoUsuariosJaAdicionadosNoGrupo(usuAdd)" ng-model="usuAdd" ng-options="usuario.Codigo as usuario.Nome for usuario in usuariosAdicionados">                                
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

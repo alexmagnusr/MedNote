@@ -1,0 +1,74 @@
+﻿<h3>Permissões de Usuários</h3>
+<toaster-container toaster-options="{'position-class': 'toast-bottom-center', 'close-button':true}"></toaster-container>
+<div class="panel panel-default ng-scope">
+    <div class="panel-body">
+        <form role="form" name="formPermissoesUsu" ng-submit="salvar()" parsley-validate="">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Perfil do Usuário: </label>
+
+                            <label data-ng-repeat="tipoCol in tiposColaborador" class="radio-inline c-radio">
+                                <input id="tipoColaborador" type="radio" ng-click="resetArrays()" ng-model="permissaoUsuario.TpColaborador" name="i-radio" value="{{tipoCol.Codigo}}"><span class="fa fa-circle"></span> {{tipoCol.Descricao}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Usuario</label>
+                            <select required="required" ng-model="permissaoUsuario.Usuario" ng-options="usuario.Codigo as usuario.Nome for usuario in usuariosDisponiveis" class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Modulo</label>
+                            <select ng-init="loadModulo()" required="required" ng-change="loadPagina(permissaoUsuario.Modulo)" ng-model="permissaoUsuario.Modulo" ng-options="modulo.Codigo as modulo.Nome for modulo in modulos" class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Página</label>
+                            <select required="required" ng-change="loadAcoesDisponiveis(permissaoUsuario.Pagina)" ng-model="permissaoUsuario.Pagina" ng-options="pagina.Codigo as pagina.Nome for pagina in paginas" class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Ações Disponíveis</label>
+                            <select class="form-control" multiple style="height:250px;" ng-change="selecionandoAcoesDisponiveis(acaoDispo)" ng-model="acaoDispo" ng-options="acao.Codigo as acao.Nome for acao in acoesDisponiveis">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <br /><br />
+                            <button class="btn btn-pill-left btn-danger" type="button" ng-click="removeAcoesSelecionadosAoUsuario()">Remover</button> <br /><br />
+                            <button class="btn btn-pill-right btn-success" type="button" ng-click="addAcoesSelecionadosAoUsuario()">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group form-group--float form-group--float-center">
+                            <label>Ações do Usuario</label>
+                            <select class="form-control" multiple style="height:250px;" ng-change="selecionandoAcoesJaAdicionadosNoUsuario(acaoAdd)" ng-model="acaoAdd" ng-options="acao.Codigo as acao.Nome for acao in acoesAdicionadas">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

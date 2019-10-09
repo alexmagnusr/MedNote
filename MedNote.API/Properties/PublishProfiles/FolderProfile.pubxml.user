@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\publish\MedNote\API</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/HelpPage.css">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/Api.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/CollectionModelDescription.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ComplexTypeModelDescription.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/DictionaryModelDescription.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/EnumTypeModelDescription.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/KeyValuePairModelDescription.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ModelDescriptionLink.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/SimpleTypeModelDescription.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/Index.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/ResourceModel.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Shared/_Layout.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Web.config">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/_ViewStart.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>12/17/2018 11:51:16</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>12/17/2018 11:51:16</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.API.dll">
+      <publishTime>09/26/2018 13:42:27</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.API.pdb">
+      <publishTime>09/26/2018 13:42:27</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Dominio.dll">
+      <publishTime>09/26/2018 09:20:35</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Dominio.dll.config">
+      <publishTime>09/04/2018 16:17:56</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Dominio.pdb">
+      <publishTime>09/26/2018 09:20:35</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Infra.dll">
+      <publishTime>09/26/2018 09:20:37</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Infra.dll.config">
+      <publishTime>09/04/2018 16:17:56</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Infra.pdb">
+      <publishTime>09/26/2018 09:20:37</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Persistencia.dll">
+      <publishTime>09/26/2018 09:20:36</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Persistencia.dll.config">
+      <publishTime>09/04/2018 16:17:56</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Persistencia.pdb">
+      <publishTime>09/26/2018 09:20:36</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Repositorios.dll">
+      <publishTime>09/26/2018 09:20:36</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Repositorios.dll.config">
+      <publishTime>09/04/2018 16:17:56</publishTime>
+    </File>
+    <File Include="bin/AtiveEngenharia.Repositorios.pdb">
+      <publishTime>09/26/2018 09:20:36</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>12/17/2018 11:51:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>12/17/2018 11:51:16</publishTime>
+    </File>
+    <File Include="bin/EnvDTE.dll">
+      <publishTime>12/17/2018 10:53:53</publishTime>
+    </File>
+    <File Include="bin/EnvDTE80.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/FluentNHibernate.dll">
+      <publishTime>12/17/2018 11:51:17</publishTime>
+    </File>
+    <File Include="bin/FluentNHibernate.pdb">
+      <publishTime>12/17/2018 11:51:18</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/Globalsys.dll">
+      <publishTime>02/20/2019 14:04:24</publishTime>
+    </File>
+    <File Include="bin/Globalsys.dll.config">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="bin/Globalsys.pdb">
+      <publishTime>02/20/2019 14:04:24</publishTime>
+    </File>
+    <File Include="bin/Iesi.Collections.dll">
+      <publishTime>12/17/2018 11:51:18</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:28</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/LinqKit.dll">
+      <publishTime>12/17/2018 11:51:18</publishTime>
+    </File>
+    <File Include="bin/MedNote.API.dll">
+      <publishTime>02/20/2019 14:05:13</publishTime>
+    </File>
+    <File Include="bin/MedNote.API.pdb">
+      <publishTime>02/20/2019 14:05:13</publishTime>
+    </File>
+    <File Include="bin/MedNote.Dominio.dll">
+      <publishTime>02/20/2019 14:04:29</publishTime>
+    </File>
+    <File Include="bin/MedNote.Dominio.dll.config">
+      <publishTime>12/17/2018 11:51:10</publishTime>
+    </File>
+    <File Include="bin/MedNote.Dominio.pdb">
+      <publishTime>02/20/2019 14:04:29</publishTime>
+    </File>
+    <File Include="bin/MedNote.Infra.dll">
+      <publishTime>02/20/2019 14:04:47</publishTime>
+    </File>
+    <File Include="bin/MedNote.Infra.dll.config">
+      <publishTime>12/17/2018 11:51:10</publishTime>
+    </File>
+    <File Include="bin/MedNote.Infra.pdb">
+      <publishTime>02/20/2019 14:04:47</publishTime>
+    </File>
+    <File Include="bin/MedNote.Persistencia.dll">
+      <publishTime>02/20/2019 14:04:42</publishTime>
+    </File>
+    <File Include="bin/MedNote.Persistencia.dll.config">
+      <publishTime>12/17/2018 11:51:15</publishTime>
+    </File>
+    <File Include="bin/MedNote.Persistencia.pdb">
+      <publishTime>02/20/2019 14:04:42</publishTime>
+    </File>
+    <File Include="bin/MedNote.Repositorios.dll">
+      <publishTime>02/20/2019 14:04:35</publishTime>
+    </File>
+    <File Include="bin/MedNote.Repositorios.dll.config">
+      <publishTime>12/17/2018 11:51:16</publishTime>
+    </File>
+    <File Include="bin/MedNote.Repositorios.pdb">
+      <publishTime>02/20/2019 14:04:35</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/17/2018 11:51:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>12/17/2018 11:51:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>12/17/2018 11:51:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>12/17/2018 11:51:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>12/17/2018 11:51:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>12/17/2018 11:51:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>12/17/2018 11:51:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>12/17/2018 11:51:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.MSXML.dll">
+      <publishTime>12/17/2018 10:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Cors.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.Common.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.DataVisualization.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.Design.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.ProcessingObjectModel.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WebDesign.dll">
+      <publishTime>12/17/2018 11:51:27</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
+      <publishTime>12/17/2018 11:51:27</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WinForms.dll">
+      <publishTime>12/17/2018 11:51:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.Types.dll">
+      <publishTime>12/17/2018 11:51:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.ComponentModelHost.dll">
+      <publishTime>06/20/2016 14:45:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Data.Core.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Data.Services.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Debugger.Interop.11.0.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Debugger.InteropA.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Designer.Interfaces.dll">
+      <publishTime>01/15/2018 14:42:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.GraphModel.dll">
+      <publishTime>06/20/2016 14:45:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.ManagedInterfaces.dll">
+      <publishTime>10/18/2018 13:11:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.OLE.Interop.dll">
+      <publishTime>12/17/2018 10:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.ProjectAggregator.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Immutable.10.0.dll">
+      <publishTime>01/15/2018 14:42:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Immutable.11.0.dll">
+      <publishTime>01/15/2018 14:42:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Immutable.12.0.dll">
+      <publishTime>01/15/2018 14:42:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Immutable.14.0.dll">
+      <publishTime>01/15/2018 14:42:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Interop.10.0.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Interop.11.0.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Interop.8.0.dll">
+      <publishTime>12/17/2018 10:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Interop.9.0.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Interop.dll">
+      <publishTime>12/17/2018 10:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.TemplateWizardInterface.dll">
+      <publishTime>10/18/2018 13:11:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.TextManager.Interop.10.0.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.TextManager.Interop.8.0.dll">
+      <publishTime>12/17/2018 10:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.TextManager.Interop.dll">
+      <publishTime>12/17/2018 10:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.VSHelp.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.WCFReference.Interop.dll">
+      <publishTime>02/07/2018 23:55:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/17/2018 11:51:33</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/17/2018 11:51:34</publishTime>
+    </File>
+    <File Include="bin/NHibernate.dll">
+      <publishTime>12/17/2018 11:51:33</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>12/17/2018 11:51:34</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>12/17/2018 11:51:34</publishTime>
+    </File>
+    <File Include="bin/pt-br/Microsoft.VisualStudio.Data.Core.resources.dll">
+      <publishTime>09/10/2018 10:51:18</publishTime>
+    </File>
+    <File Include="bin/pt-br/Microsoft.VisualStudio.Data.Services.resources.dll">
+      <publishTime>09/10/2018 10:51:18</publishTime>
+    </File>
+    <File Include="bin/pt-br/Microsoft.VisualStudio.GraphModel.resources.dll">
+      <publishTime>07/07/2015 01:32:24</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Net.Http.Formatting.resources.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.Helpers.resources.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.Http.resources.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.Http.WebHost.resources.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.Mvc.resources.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.Optimization.resources.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.Razor.resources.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/pt-br/System.Web.WebPages.resources.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/pt/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/pt/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/pt/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/pt/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:29</publishTime>
+    </File>
+    <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:29</publishTime>
+    </File>
+    <File Include="bin/pt/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/RazorGenerator.Mvc.dll">
+      <publishTime>12/17/2018 11:51:34</publishTime>
+    </File>
+    <File Include="bin/Reports/RelatorioCentroDeCustoXMateriais.rdlc">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportBalancoDeMateriais.rdlc">
+      <publishTime>09/13/2018 15:38:35</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportControleDeMateriaisDoAlmoxarifado.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportCotaDeMateriais.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportDespesasKS.rdlc">
+      <publishTime>09/26/2018 11:55:03</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportEtiquetaMaterial.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportHistoricoDeLiberacaoEBaixa.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportHistoricoSaldoMateriais.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportSaldoDeMateriaisPorEletricista.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="bin/Reports/ReportTabelaDeArmazenamento.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="bin/Reports/SolicitacaoReport.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.Process.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.DriveInfo.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Thread.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>12/17/2018 11:51:23</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:29</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:29</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/SqlServerTypes/x64/msvcr120.dll">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="bin/SqlServerTypes/x64/SqlServerSpatial140.dll">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="bin/SqlServerTypes/x86/msvcr120.dll">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="bin/SqlServerTypes/x86/SqlServerSpatial140.dll">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>12/17/2018 10:53:53</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>12/17/2018 11:51:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>12/17/2018 11:51:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>12/17/2018 11:51:22</publishTime>
+    </File>
+    <File Include="bin/VSLangProj.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/VSLangProj2.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/VSLangProj80.dll">
+      <publishTime>10/02/2018 16:54:03</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>12/17/2018 11:51:34</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>12/17/2018 11:51:34</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:29</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:29</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:32</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/Microsoft.ReportViewer.Common.resources.dll">
+      <publishTime>12/17/2018 11:51:33</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/Microsoft.ReportViewer.DataVisualization.resources.dll">
+      <publishTime>12/17/2018 11:51:33</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/Microsoft.ReportViewer.Design.resources.dll">
+      <publishTime>12/17/2018 11:51:33</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/Microsoft.ReportViewer.WebDesign.resources.dll">
+      <publishTime>12/17/2018 11:51:30</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>12/17/2018 11:51:30</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/Microsoft.ReportViewer.WinForms.resources.dll">
+      <publishTime>12/17/2018 11:51:33</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.assuntoPIMaster.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.atualizaPagamentoNaEntregaResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.atualizaRemessaAgrupadaResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.bloquearObjetoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.buscaClienteResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.buscaContratoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.buscaPagamentoEntregaResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.buscaServicosAdicionaisAtivosResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.buscaServicosResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.buscaServicosValorDeclaradoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.buscaServicosXServicosAdicionaisResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.buscaTarifaValeResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.calculaTarifaServicoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.cancelarObjetoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.cancelarPedidoScolResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.clienteERP.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.consultaCEPResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.consultarPedidosInformacaoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.consultaSROResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.contratoERP.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.embalagemLRSMaster.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.enderecoERP.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.fechaPlpResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.fechaPlpVariosServicosResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.getStatusCartaoPostagemResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.getStatusPLPResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.integrarUsuarioScolResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.mensagemRetornoPIMaster.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.motivoPIMaster.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.obterAssuntosPIResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.obterClienteAtualizacaoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.obterEmbalagemLRSResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.obterMensagemRetornoPIResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.obterMotivosPIResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.registrarPedidosInformacaoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.retorno.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.retornoCancelamento.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.servicoAdicionalXML.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.servicoERP.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.solicitaEtiquetasResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.solicitaPLPResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.solicitarPostagemScolResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.solicitaXmlPlpResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.statusCartao.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.statusPlp.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.valePostal.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.validaEtiquetaPLPResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.validaPlpResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.validarPostagemReversaResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.validarPostagemSimultaneaResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.verificaDisponibilidadeServicoResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/AtiveEngenharia.API.WSCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <publishTime>09/04/2018 16:17:53</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.assuntoPIMaster.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.atualizaPagamentoNaEntregaResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.atualizaRemessaAgrupadaResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.bloquearObjetoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.buscaClienteResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.buscaContratoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.buscaPagamentoEntregaResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.buscaServicosAdicionaisAtivosResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.buscaServicosResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.buscaServicosValorDeclaradoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.buscaServicosXServicosAdicionaisResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.buscaTarifaValeResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.calculaTarifaServicoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.cancelarObjetoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.cancelarPedidoScolResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.clienteERP.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.consultaCEPResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.consultarPedidosInformacaoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.consultaSROResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.contratoERP.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.embalagemLRSMaster.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.enderecoERP.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.fechaPlpResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.fechaPlpVariosServicosResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.getStatusCartaoPostagemResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.getStatusPLPResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.integrarUsuarioScolResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.mensagemRetornoPIMaster.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.motivoPIMaster.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.obterAssuntosPIResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.obterClienteAtualizacaoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.obterEmbalagemLRSResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.obterMensagemRetornoPIResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.obterMotivosPIResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.registrarPedidosInformacaoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.retorno.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.retornoCancelamento.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.servicoAdicionalXML.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.servicoERP.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.solicitaEtiquetasResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.solicitaPLPResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.solicitarPostagemScolResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.solicitaXmlPlpResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.statusCartao.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.statusPlp.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.valePostal.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.validaEtiquetaPLPResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.validaPlpResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.validarPostagemReversaResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.validarPostagemSimultaneaResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.verificaDisponibilidadeServicoResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Connected Services/WSCorreios/MedNote.API.WSCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Content/images/logo2.png">
+      <publishTime>01/28/2019 13:37:00</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Content/templates/esqueciSenha.htm">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Content/templates/estoqueBaixo.htm">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Content/templates/novaContaDeUsuario.htm">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Content/templates/solicitacaoCompra.htm">
+      <publishTime>11/12/2018 14:15:37</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Reports/RelatorioCentroDeCustoXMateriais.rdlc">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Reports/ReportBalancoDeMateriais.rdlc">
+      <publishTime>09/13/2018 15:38:35</publishTime>
+    </File>
+    <File Include="Reports/ReportControleDeMateriaisDoAlmoxarifado.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="Reports/ReportCotaDeMateriais.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="Reports/ReportDespesasKS.rdlc">
+      <publishTime>09/26/2018 11:55:03</publishTime>
+    </File>
+    <File Include="Reports/ReportEtiquetaMaterial.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="Reports/ReportHistoricoDeLiberacaoEBaixa.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="Reports/ReportHistoricoSaldoMateriais.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="Reports/ReportSaldoDeMateriaisPorEletricista.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="Reports/ReportTabelaDeArmazenamento.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="Reports/SolicitacaoReport.rdlc">
+      <publishTime>09/04/2018 16:17:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.min.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/moment.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/moment.min.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="SqlServerTypes/readme.htm">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="SqlServerTypes/x64/msvcr120.dll">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="SqlServerTypes/x64/SqlServerSpatial140.dll">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="SqlServerTypes/x86/msvcr120.dll">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="SqlServerTypes/x86/SqlServerSpatial140.dll">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>12/17/2018 11:51:05</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/20/2019 14:05:23</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

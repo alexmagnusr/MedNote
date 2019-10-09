@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67FB6FEF-345D-4643-B9A7-0524345D3AE1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedNote.Persistencia</RootNamespace>
+    <AssemblyName>MedNote.Persistencia</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.1.1.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.0\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auditoria\AuditCreateListener.cs" />
+    <Compile Include="Auditoria\AuditDeleteListener.cs" />
+    <Compile Include="Auditoria\AuditUpdateListener.cs" />
+    <Compile Include="Auditoria\Model\AuditModel.cs" />
+    <Compile Include="Mapeamento\MedNote\CategoriaDiagnosticoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\CategoriaDispositivoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\ComorbidadeInternacaoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\ComplicacaoDiagnosticoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\DiagnosticoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\DiagnosticoPrimarioMap.cs" />
+    <Compile Include="Mapeamento\MedNote\SitioDispositivoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\TipoDispositivoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\SiglaDispositivoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\DispositivoInternacaoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\AdmissaoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\InternacaoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\LeitoMap.cs" />
+    <Compile Include="Mapeamento\MedNote\PacienteMap.cs" />
+    <Compile Include="Mapeamento\MedNote\ParametrosBaseMap.cs" />
+    <Compile Include="Mapeamento\MedNote\SetorMap.cs" />
+    <Compile Include="Mapeamento\MedNote\TipoSetorMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\EstabelecimentoSaudeMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\EspecialidadeMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\ClienteMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\AcaoMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\FuncaoMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\GrupoMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\PermissaoMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\PermissaoUsuarioMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\RecursoMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\SetorUsuarioMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\TipoSetorClienteMap.cs" />
+    <Compile Include="Mapeamento\Seguranca\UsuarioMap.cs" />
+    <Compile Include="Mapeamento\Sistema\AuditoriaMap.cs" />
+    <Compile Include="Mapeamento\Sistema\LogErroMap.cs" />
+    <Compile Include="Mapeamento\Sistema\NotificacaoMap.cs" />
+    <Compile Include="Persistencia\ModuloSistema.cs" />
+    <Compile Include="Persistencia\SessionFactory.cs" />
+    <Compile Include="Persistencia\UnidadeTrabalho.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\Seguranca\RepositorioAcao.cs" />
+    <Compile Include="Repositorio\Seguranca\RepositorioEspecialidade.cs" />
+    <Compile Include="Repositorio\Seguranca\RepositorioFuncao.cs" />
+    <Compile Include="Repositorio\Seguranca\RepositorioGrupo.cs" />
+    <Compile Include="Repositorio\Seguranca\RepositorioPermissao.cs" />
+    <Compile Include="Repositorio\Seguranca\RepositorioCliente.cs" />
+    <Compile Include="Repositorio\Seguranca\RepositorioUsuario.cs" />
+    <Compile Include="Repositorio\Seguranca\Teste.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Globalsys\Globalsys.csproj">
+      <Project>{2b19c424-728f-4159-b762-7632043ce409}</Project>
+      <Name>Globalsys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedNote.Dominio\MedNote.Dominio.csproj">
+      <Project>{1555ab3f-8883-4382-b509-e48e5d113735}</Project>
+      <Name>MedNote.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedNote.Repositorios\MedNote.Repositorios.csproj">
+      <Project>{63216971-da2c-4ecb-8852-5c8914a4ae21}</Project>
+      <Name>MedNote.Repositorios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

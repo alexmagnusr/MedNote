@@ -1,0 +1,105 @@
+﻿<style>
+    .table-fixed {
+        width: 100%;
+    }
+
+        .table-fixed tr:after {
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        .table-fixed > thead,
+        .table-fixed > tbody,
+        .table-fixed > tbody > tr,
+        .table-fixed > tbody > tr:after,
+        .table-fixed > thead > tr,
+        .table-fixed > thead > tr > th {
+            display: block;
+        }
+
+            .table-fixed > thead > th {
+                height: 40px;
+            }
+
+        .table-fixed > tbody {
+            height: 210px;
+            overflow-y: auto;
+        }
+
+            .table-fixed > tbody > tr > td, .table-fixed > thead > tr > th {
+                width: 25%;
+                float: left;
+            }
+
+    .flex-v-center {
+        display: flex;
+        align-items: center;
+    }
+</style>
+
+<script type="text/ng-template" id="modalPainelMaster">
+    <div class="modal-header-title">
+        <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">Fechar</button>
+        <center><h3 class="modal-title">{{tituloModal}}</h3></center>
+    </div>
+    <div class="modal-header-subtitle" style="padding-left: 30px;">
+        <center><h4 class="modal-title">{{setorModal}}</h4></center>
+    </div>
+    <div class="modal-body">
+        <div id="bloco-plano-estudos" class="container-fluid" style="padding-top: 0px;padding-bottom: 0px;">
+                <div class="row" id="box">
+                    <div class="col-sm-4 col-lg-2 col-xs-6 colunas" ng-repeat="item in leitos">
+                        <div class="dia-plano" data-ng-click="abrirMasterAdmissao(item)">
+                            <span class="numero-dia">{{item.Identificador}}</span>
+                            <div class="conteudo-plano">
+                                <div class="conteudo-plano" style="padding-bottom: 0px;padding-top: 0px;">
+                                   
+                                    <span ng-if="item.Liberado == 1" class="liberado">Liberado</span>
+
+                                    <p>{{item.InfoSetor}}</p>
+                                    <p class="topico" ng-repeat="disp in item.Dispositivos">
+                                        {{disp}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rodape-plano">
+                                <p><strong>SAPS 3:</strong> 40</p>
+                                <p><strong>SOFA:</strong> 3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="container-fluid" id="barra-superior" style="padding-top: 0px;">
+            <div class="box-widget">
+                <div class="widget">
+                    <p class="numero-metricas">6,8 dias</p>
+                    <p class="titulo-metricas">Média de Permanência</p>
+                </div>
+                <div class="widget">
+                    <p class="numero-metricas">{{TaxaOcupacao}}%</p>
+                    <p class="titulo-metricas">Taxa de Ocupação</p>
+                </div>
+                <div class="widget">
+                    <!--<p class="numero-metricas">{{QuantidadeTotalAtividade}}</p>-->
+                    <p class="titulo-metricas">PAV</p>
+                </div>
+                <div class="widget">
+                    <!--<p class="numero-metricas">{{PercentualConclusaoAtividade/100}}%</p>-->
+                    <p class="titulo-metricas">IPCS</p>
+                </div>
+                <div class="widget">
+                    <!--<p class="numero-metricas">{{PercentualConclusaoAtividade/100}}%</p>-->
+                    <p class="titulo-metricas">ITU</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</script>
+
+
+
+

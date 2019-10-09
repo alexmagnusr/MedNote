@@ -1,0 +1,132 @@
+<style>
+    .badge1 {
+        position: relative;
+    }
+
+        .badge1[data-badge]:after {
+            content: attr(data-badge);
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: .7em;
+            background: green;
+            color: white;
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            line-height: 18px;
+            border-radius: 50%;
+            box-shadow: 0 0 1px #333;
+        }
+
+    .scrolly {
+        height: 0 auto;
+        overflow: auto;
+        overflow-y: hidden;
+        margin: 0 auto;
+        white-space: nowrap;
+    }
+</style>
+
+<!-- START Top Navbar-->
+<nav class="navbar topnavbar" role="navigation">
+    <!-- START navbar header-->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#/">
+            <!-- <p class="text-center pv" style="font-weight: 100; font-size: 24px; color: #FFF; font-style:normal;">MedNote</p>-->
+
+            <div class="brand-logo">
+                <img class="img-responsive" style="width : 45%; height : 45%" src="app/img/logo3.png" alt="MedNote" />
+            </div>
+            <!--<div class="brand-logo-collapsed">
+        <img class="img-responsive" src="app/img/logo2.png" alt="Vix Way" />
+    </div>-->
+        </a>
+    </div>
+    <!-- END navbar header-->
+    <!-- START Nav wrapper-->
+    <div class="nav-wrapper">
+        <!-- START Left navbar-->
+        <ul class="nav navbar-nav">
+            <li>
+                <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+                <a class="hidden-xs" href="" trigger-resize="" ng-click="app.layout.isCollapsed = !app.layout.isCollapsed" ng-if="!app.layout.isCollapsedText">
+                    <em class="fa fa-navicon" style="color:#FFFFFF !important"></em>
+                </a>
+                <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+                <a class="visible-xs sidebar-toggle" href="" ng-click="app.asideToggled = !app.asideToggled">
+                    <em class="fa fa-navicon" style="color:#FFFFFF !important"></em>
+                </a>
+            </li>
+        </ul>
+        <!-- END Left navbar-->
+        <!-- START Right Navbar-->
+        <ul class="nav navbar-nav navbar-right" ng-controller="notificacoesController" ng-init="inicializarHub()">
+            <!--<li class="dropdown dropdown-list" uib-dropdown="">
+            <a uib-dropdown-toggle="">
+                <em ng-click="listarNotificacoes()" class="fa fa-globe fa-2x fa-pull-left" style=" color:#fff !important;"></em>
+                <div id="badgeNotificacao" ng-if="showBadge" class="badge1" data-badge=""></div>
+            </a>
+            <ul class="dropdown-menu animated flipInX" style="width:280px !important; max-height: 350px; overflow-y: scroll;" id="notifacoes-navbar">
+                <li>
+                    <div class="list-group">
+                        <a class="list-group-item" href="" ng-repeat="itemLista in listaDeNotificacoesNaoVistas">
+                            <div class="media-box">
+                                <div class="pull-left">
+                                    <em class="fa fa-envelope fa-2x text-warning"></em>
+                                </div>
+                                <div class="media-box-body clearfix">
+                                    <p class="m0" style="font-size:12px !important; font-weight:bold !important;">{{itemLista.Nome}}</p>
+                                    <p class="m0 text-muted">
+                                        <small>{{doTruncarStr(itemLista.Descricao,80)}}</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="list-group-item" href="">
+                            <a ng-click="telaNotificacoes()"><center>Mais notifica&ccedil;&otilde;es</center></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>-->
+            <!-- Search icon-->
+            <li ng-controller="usuarioController" ng-init="obterNomeDoUsuarioLogado()">
+                <a style="color:white;">
+                    <div class="pull-left" style="margin-top:-5px;"></div>
+                    &nbsp; <b class="ng-binding">Usuário: {{nomeusuario}}</b>
+                    &nbsp; <b class="ng-binding">Estabelecimento: {{estabelecimento}}</b>
+                </a>
+            </li>
+            <!--<li>
+            <a search-open="">
+                <em class="icon-magnifier"></em>
+            </a>
+        </li>-->
+            <!-- START Offsidebar button-->
+            <li>
+                <a href="" ng-click="app.offsidebarOpen = !app.offsidebarOpen">
+                    <em style="color:#FFFFFF !important" class="icon-menu"></em>
+                </a>
+            </li>
+            <!--<li>
+            <a href="" ng-controller="loginController" ng-click="logOut()">
+                <em class="icon-logout"></em>
+            </a>
+        </li>-->
+            <!-- END Offsidebar menu-->
+        </ul>
+        <!-- END Right Navbar-->
+
+        <div ng-controller="moduloController" ng-init="loadModulos()" class="pull-left" style="margin-top: 10px; width: 250px;">
+            <select ng-if="ehMaster" ng-model="moduloGlobal" ng-selected="moduloGlobal" ng-change="update(moduloGlobal)" ng-options="modulo.Codigo as modulo.Nome for modulo in clientes" required="required" class="form-control" width="100%">
+                <option value="">Selecione o Cliente</option>
+            </select>
+        </div>
+    </div>
+    <!-- END Nav wrapper-->
+    <!-- START Search form-->
+    <!-- END Search form-->
+</nav>
+<!-- END Top Navbar-->

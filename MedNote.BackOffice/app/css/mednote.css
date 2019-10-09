@@ -1,0 +1,125 @@
+﻿body {
+    background: #f6f7fb;
+}
+
+.cor-azul {
+    color: #288bfb;
+}
+
+.cor-verde {
+    color: #99cb57;
+}
+
+#barra-superior {
+    padding: 20px 5px 0;
+}
+
+    #barra-superior .box-widget {
+        background: #288bfb;
+        border: 1px solid #0471ec;
+        box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.09);
+        border-radius: 5px;
+        display: flex;
+    }
+
+        #barra-superior .box-widget .widget {
+            padding: 20px;
+            margin: 0;
+            flex: 1;
+        }
+
+            #barra-superior .box-widget .widget p {
+                margin: 0;
+                color: #fff;
+            }
+
+            #barra-superior .box-widget .widget .numero-metricas {
+                text-align: center;
+                font-size: 2.7rem;
+                font-weight: bold;
+            }
+
+            #barra-superior .box-widget .widget .titulo-metricas {
+                text-align: center;
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                color: #fff;
+            }
+
+            #barra-superior .box-widget .widget:not(:last-child) {
+                border-right: 1px solid #0471ec;
+            }
+
+.opcoes-plano {
+    margin-top: 20px;
+}
+
+#bloco-plano-estudos {
+    padding: 20px;
+}
+
+    #bloco-plano-estudos .colunas {
+        padding: 0 5px;
+    }
+
+    #bloco-plano-estudos .dia-plano {
+        border: 1px solid #eeeff3;
+        padding: 1px 0 0;
+        background: #fff;
+        margin-bottom: 10px;
+    }
+
+        #bloco-plano-estudos .dia-plano .numero-dia {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            color: #c7d3dd;
+            font-size: 3rem;
+        }
+
+        #bloco-plano-estudos .dia-plano .liberado {
+            text-align: center;
+            color: #c7d3dd;
+            font-size: 3rem;
+        }
+
+        #bloco-plano-estudos .dia-plano .rodape-plano {
+            border-top: 1px solid #eeeff3;
+            background: rgba(241, 242, 247, 0.5);
+            padding: 10px 20px;
+            font-size: 1.4rem;
+        }
+
+            #bloco-plano-estudos .dia-plano .rodape-plano p {
+                margin: 0;
+                color: #444;
+            }
+
+        #bloco-plano-estudos .dia-plano .conteudo-plano {
+            padding: 30px 10px;
+            height: 150px;
+        }
+
+            #bloco-plano-estudos .dia-plano .conteudo-plano p {
+                font-size: 1.4rem;
+                line-height: 2.8rem;
+                color: #444;
+                margin: 0;
+                padding: 0;
+            }
+
+                #bloco-plano-estudos .dia-plano .conteudo-plano p .badge {
+                    padding: 4px 3px 3px;
+                }
+
+            #bloco-plano-estudos .dia-plano .conteudo-plano .fa-times-circle {
+                color: #f64d71;
+            }
+
+            #bloco-plano-estudos .dia-plano .conteudo-plano .fa-check-circle {
+                color: #99cb57;
+            }
+
+        #bloco-plano-estudos .dia-plano:hover {
+            background: #eef6ff;
+        }

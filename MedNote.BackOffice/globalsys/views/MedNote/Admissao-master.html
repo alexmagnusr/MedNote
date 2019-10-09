@@ -1,0 +1,241 @@
+﻿<style>
+    .table-fixed {
+        width: 100%;
+    }
+
+        .table-fixed tr:after {
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        .table-fixed > thead,
+        .table-fixed > tbody,
+        .table-fixed > tbody > tr,
+        .table-fixed > tbody > tr:after,
+        .table-fixed > thead > tr,
+        .table-fixed > thead > tr > th {
+            display: block;
+        }
+
+            .table-fixed > thead > th {
+                height: 40px;
+            }
+
+        .table-fixed > tbody {
+            height: 210px;
+            overflow-y: auto;
+        }
+
+            .table-fixed > tbody > tr > td, .table-fixed > thead > tr > th {
+                width: 25%;
+                float: left;
+            }
+</style>
+
+<script type="text/ng-template" id="modalAdmissao">
+
+    <div class="modal-header-title">
+        <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">Fechar</button>
+        <center><h3 class="modal-title">{{tituloModal}}</h3></center>
+    </div>
+    <div class="modal-header-subtitle" style="padding-left: 30px;">
+        <h4 class="modal-title">{{leitoModal}}{{pacienteModal}}</h4>
+    </div>
+    <form role="form" name="formAdmissao" ng-submit="salvar()" parsley-validate="">
+        <div class="modal-body">
+            <div id="divContentFull" class='content'>
+                <div class="col-sm-9">
+
+                    <div class="tab-content" ng-show="selectedTab == 1" style="border-top-width: 1px;">
+
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <label>Nome</label>
+                                <input id="typehead1"
+                                       type="text"
+                                       autocomplete="off"
+                                       ng-model="admissao.NomePaciente"
+                                       placeholder="Nome do Paciente"
+                                       ng-change="consultarPacientes(admissao.NomePaciente)"
+                                       required="required"
+                                       uib-typeahead="paciente.Nome for paciente in pacientes | filter:$viewValue | limitTo:8"
+                                       typeahead-on-select="setPaciente($item)"
+                                       uib-typeahead-loading="loadingLocations" class="form-control">
+                                <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Gênero</label>
+                                <div>
+                                    <label class="radio-inline c-radio">
+                                        <input id="Genero1" class="form-control" type="radio"  data-ng-model="admissao.Genero" data-ng-checked="admissao.Genero == 'M'" name="Genero" ng-value=1 required checked />
+                                        <span class="fa fa-check"></span>Masculino
+                                    </label>
+                                    <label class="radio-inline c-radio">
+                                        <input id="Genero2" class="form-control" type="radio"  data-ng-model="admissao.Genero" ng-checked="admissao.Genero == 'F'" name="Genero" ng-value=2 required />
+                                        <span class="fa fa-check"></span>Feminino
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Data de Nascimento</label>
+                                <div class="input-group">
+                                    <div class="input-group">
+                                        <input class="form-control"
+                                               type="text" required="required" uib-datepicker-popup="{{datePickerSetting.format}}" data-ng-model="admissao.DataNascimento" is-open="datePickerSetting.opened" uib-datepicker-options="datePickerSetting.dateOptions"
+                                               close-text="Fechar" ng-mousedown="openDataNascimento($event)" ng-change="updateIdade($event)" />
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" ng-click="openDataNascimento($event)">
+                                                <em class="fa fa-calendar"></em>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <label>Idade</label>
+                                <input type="text" disabled="disabled" class="form-control" data-ng-model="admissao.Idade" placeholder="Idade">
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Nº Atendimento</label>
+                                <input type="number" required="required" max=9999999999 class="form-control" data-ng-model="admissao.NumeroAtendimento" placeholder="Numero">
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Nº Prontuário</label>
+                                <input type="text" required="required" class="form-control" data-ng-model="admissao.NumProntuario" placeholder="Numero">
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Tipo</label>
+                                <div>
+                                    <label class="radio-inline c-radio">
+                                        <input id="TipoDocumento1" class="form-control" required="required" type="radio" data-ng-model="admissao.TipoDocumento" ng-checked="admissao.TipoDocumento == 1" name="TipoDocumento" ng-value=1 />
+                                        <span class="fa fa-check"></span>CPF
+                                    </label>
+                                    <label class="radio-inline c-radio">
+                                        <input id="TipoDocumento2" class="form-control" required="required" type="radio" data-ng-model="admissao.TipoDocumento" ng-checked="admissao.TipoDocumento == 2" name="TipoDocumento" ng-value=2 />
+                                        <span class="fa fa-check"></span>RG
+                                    </label>
+                                    <label class="radio-inline c-radio">
+                                        <input id="TipoDocumento3" class="form-control" required="required" type="radio" data-ng-model="admissao.TipoDocumento" ng-checked="admissao.TipoDocumento == 3" name="TipoDocumento" ng-value=3 />
+                                        <span class="fa fa-check"></span>Outros
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <label>Nº Documento</label>
+                                <input id="documentoCPF" type="text" class="form-control" data-ng-model="admissao.Documento" ng-show="admissao.TipoDocumento == 1" ui-br-cpf-mask>
+                                <input id="documentoRG" type="text" class="form-control" data-ng-model="admissao.Documento" ng-show="admissao.TipoDocumento == 2" ng-change="mudaMascaraRG(event)">
+                                <input id="documentoOutro" type="text" class="form-control" data-ng-model="admissao.Documento" ng-show="admissao.TipoDocumento == 3">
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Data Internação Hospitalar</label>
+                                <input type="text" disabled="disabled" class="form-control" data-ng-model="admissao.DataInternacaoFormat" placeholder="Data Internação">
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Data Admissão no Setor</label>
+                                <input type="text" disabled="disabled" class="form-control" data-ng-model="admissao.DataAdmissaoFormat" placeholder="Data Admissão">
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <label>Convênio: </label>
+
+                                <div class="col" ng-repeat="conv in convenios">
+                                    <label class="radio-inline c-radio">
+                                        <input id="CodigoConvenio{{conv.Codigo}}" class="form-control" required="required" type="radio"  data-ng-model="admissao.CodigoConvenio" ng-checked="admissao.CodigoConvenio == {{conv.Codigo}}" name="CodigoConvenio" ng-value={{conv.Codigo}} checked />
+                                        <span class="fa fa-check"></span>{{conv.Descricao}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-oval btn-success" type="submit">Salvar</button>
+                            <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="tabbable nav-tabs" ng-init="selectedTab = 1;">
+                        <ul class="nav nav-tabs nav-stacked" style="background-color: #ddd6d6">
+                            <li ng-class="{active: selectedTab == 1}">
+                                <a style="background-color: #ddd6d6" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Admissão</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 2}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Diagnósticos</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 3}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Escore</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 4}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterDispositivo(internacao)" data-toggle="modal" data-dismiss="modal">Dispositivos</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 5}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Infecções</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 6}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Antimicrobianos</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 7}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Culturas</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 8}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Terapia Renal</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 9}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Terapia Nutri.</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 10}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Enfermagem</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 11}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Cuidados Paliativos</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 12}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Bundles</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 13}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Impressão</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 14}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Planejamento diário</a>
+                            </li>
+                            <li ng-class="{active: selectedTab == 15}">
+                                <a style="background-color: #ffffff" ng-click="abrirMasterAdmissao(cliente)" data-toggle="modal" data-dismiss="modal">Alta</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</script>

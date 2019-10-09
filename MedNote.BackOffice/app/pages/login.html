@@ -1,0 +1,141 @@
+<style>
+    body {
+        background: url('../app/img/2.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .input-login {
+        background-color: transparent !important;
+        border: 1px solid #10bab6 !important;
+    }
+        .input-login::placeholder {
+            color: #10bab6;
+        }
+
+    .inner-wrapper {
+        background: rgba(255, 255, 255, 0.7);
+        padding: 30px 40px;
+        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#E6FFFFFF', endColorstr='#E6FFFFFF');
+        /*z-index: 999999999;*/
+        -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px;
+        overflow: hidden;
+        zoom: 1;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: #666;
+    }
+
+    input:-moz-placeholder,
+    textarea:-moz-placeholder {
+        color: #666;
+    }
+
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        color: #666;
+    }
+
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        color: #666;
+    }
+</style>
+<script type="text/ng-template" id="modalAlterarSenha">
+    <div>
+        <form role="form" name="formCliente" ng-controller="usuarioController" ng-submit="recuperarSenha($event)" parsley-validate="">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">&times;</button>
+                <center><h3 class="modal-title">Esqueceu sua senha?</h3></center>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <center><h4 style="color:black; align-content:center">N&atilde;o se preocupe. Basta informar o seu e-mail cadastrado.</h4></center>
+                    <div class="col-md-12">
+                        <label>E-mail</label>
+                        <div class="form-group form-group--float form-group--float-center">
+
+                            <input type="email" required class="form-control" ng-model="usuario.email" placeholder="E-mail" />
+                        </div>
+                    </div>
+
+
+                </div>
+               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-oval btn-success" type="submit">Enviar</button>
+                <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</script>
+<div class="block-center mt-xl wd-xl" ng-controller="loginController as login">
+    <!-- START panel-->
+
+    <div class="panel-heading text-center">
+       <img class="block-center img-rounded" src="../app/img/logo1.png" style="width: 200px" alt="Image" />
+       <!-- <p class="text-center pv" style="font-weight: 300; font-size: 30px; color: #FFF;">MedNote</p>-->
+    </div>
+
+    <div class="panel panel-dark panel-flat" style="background-color: transparent">
+
+        <div class="panel-body">
+            <div class="inner-wrapper" style="width:455px;z-index:1 !important; margin-left:-50px;">
+                <h1 style="text-align:center; color:#666 ">Login</h1>
+                <form class="form-validate mb-lg" role="form" ng-submit="login()" name="login.loginForm" parsley-validate="">
+
+                    <!--<div class="clearfix">
+
+
+                        <label class="col-sm-4 control-label" style="color: #FFF; font-size: 11px; font-weight: normal;">Tipo de Login:</label>
+                        <div class="col-sm-8" style="color: yellowgreen; font-size: 13px;">
+                            <input id="inlineradio1" name="inlineradio1"  ng-model="loginData.activeDirectory" ng-value="false" type="radio">&nbsp;&nbsp;Cliente
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input id="inlineradio1" ng-model="loginData.activeDirectory" name="inlineradio1" ng-value="true" type="radio">&nbsp;&nbsp;VIX
+                        </div>
+
+
+                    </div>-->
+
+                    <div class="clearfix form-group has-feedback">
+
+                        <input class="form-control input-login" style="background-color:transparent;color:#10bab6; border: 1px solid #000; border-radius: 15px; font-size: 16px; height: 45px" id="exampleInputEmail1" type="text" name="account_email" placeholder="Login" autocomplete="off" ng-model="loginData.userName" required />
+                        <span class="fa fa-user form-control-feedback text-muted"></span>
+                    </div>
+
+
+                    <div class="form-group has-feedback">
+                        <input class="form-control input-login" style="background-color: transparent; color: #10bab6; border:1px solid #000; border-radius: 15px; font-size: 16px; height: 45px" id="exampleInputPassword1" type="password" name="account_password" placeholder="Senha" ng-model="loginData.password" required />
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+                    </div>
+                    <div class="clearfix">
+                        <div class="pull-right">
+                            <a class="text-muted" ng-controller="usuarioController" ng-click="abrirModalAlterarSenha()" style="color: #10bab6; font-size:16px;font-weight:bold;cursor: pointer;">Esqueceu sua senha?</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-block btn-success mt-lg" style="border-radius: 15px; font-size: 16px" type="submit">Autenticar</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- END panel-->
+    <div class="p-lg text-center" style="color: #FFF">
+        <span>&copy;</span>
+        <span ng-bind="app.year"></span>
+        <br />
+        <img src="{{app.logoGlobalsys}}" href="http://www.globalsys.com.br" target="_blank" />
+    </div>
+</div>

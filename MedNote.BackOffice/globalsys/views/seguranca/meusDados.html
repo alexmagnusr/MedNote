@@ -1,0 +1,79 @@
+﻿<div class="modal-header">
+    <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">&times;</button>
+    <center><h3 class="modal-title">{{tituloModalDetalhe}}</h3></center>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group form-group--float form-group--float-center">
+                <label>Nome</label>
+                <input type="text" class="form-control" value="{{usuDetalhe.Nome}}" disabled="disabled" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group form-group--float form-group--float-center">
+                <label>CPF</label>
+                <input type="text" class="form-control" value="{{usuDetalhe.Cpf}}" disabled="disabled" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group form-group--float form-group--float-center">
+                <label>Login</label>
+                <input type="text" class="form-control" value="{{usuDetalhe.Login}}" disabled="disabled" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group form-group--float form-group--float-center">
+                <label>Email</label>
+                <input type="text" class="form-control" value="{{usuDetalhe.Email}}" disabled="disabled" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group form-group--float form-group--float-center">
+                <label>Tipo Usuário</label>
+                <input type="text" class="form-control" value="{{usuDetalhe.TipoFormatado}}" disabled="disabled" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group form-group--float form-group--float-center">
+                <label>Permissões do Usuário</label>
+                <table border="0" class="table table-responsive table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>Grupo</span>
+                            </th>
+                            <th>
+                                <span>Módulo</span>
+                            </th>
+                            <th>
+                                <span>Página</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in usuDetalhe.ListaDetalhe">
+                            <td>{{item.Grupo}}</td>
+                            <td>{{item.Modulo}}</td>
+                            <td>{{item.Pagina}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-oval btn-danger" type="button" ng-click="cancel()">Fechar</button>
+</div>

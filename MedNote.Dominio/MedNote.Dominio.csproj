@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1555AB3F-8883-4382-B509-E48E5D113735}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedNote.Dominio</RootNamespace>
+    <AssemblyName>MedNote.Dominio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOs\AdmissaoPacienteDTO.cs" />
+    <Compile Include="DTOs\ClienteDTO.cs" />
+    <Compile Include="DTOs\PainelDTO.cs" />
+    <Compile Include="DTOs\SetorDTO.cs" />
+    <Compile Include="Enums\EnumParametrosBase.cs" />
+    <Compile Include="Enums\EnumTipoDocumento.cs" />
+    <Compile Include="MedNote\Admissao.cs" />
+    <Compile Include="MedNote\CategoriaDiagnostico.cs" />
+    <Compile Include="MedNote\CategoriaDispositivo.cs" />
+    <Compile Include="MedNote\ComorbidadeInternacao.cs" />
+    <Compile Include="MedNote\ComplicacaoDiagnostico.cs" />
+    <Compile Include="MedNote\Diagnostico.cs" />
+    <Compile Include="MedNote\DiagnosticoPrimario.cs" />
+    <Compile Include="MedNote\DispositivoDaInternacao.cs" />
+    <Compile Include="MedNote\Internacao.cs" />
+    <Compile Include="MedNote\Leito.cs" />
+    <Compile Include="MedNote\Paciente.cs" />
+    <Compile Include="MedNote\ParametrosBase.cs" />
+    <Compile Include="MedNote\Setor.cs" />
+    <Compile Include="Enums\EnumLateralidade.cs" />
+    <Compile Include="MedNote\SiglaDispositivo.cs" />
+    <Compile Include="MedNote\SitioDispositivo.cs" />
+    <Compile Include="MedNote\TipoDispositivo.cs" />
+    <Compile Include="MedNote\TipoSetor.cs" />
+    <Compile Include="Seguranca\EstabelecimentoSaude.cs" />
+    <Compile Include="DTOs\UsuarioColaborador.cs" />
+    <Compile Include="DTOs\UsuarioDTO.cs" />
+    <Compile Include="Seguranca\Especialidade.cs" />
+    <Compile Include="Seguranca\Cliente.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelatorioHistoricoSaldoMateriais.cs" />
+    <Compile Include="Seguranca\Acao.cs" />
+    <Compile Include="Seguranca\EnumCanal.cs" />
+    <Compile Include="Seguranca\EnumTipoFuncao.cs" />
+    <Compile Include="Seguranca\Funcao.cs" />
+    <Compile Include="Seguranca\Grupo.cs" />
+    <Compile Include="Seguranca\Membro.cs" />
+    <Compile Include="Seguranca\PermisaoUsuarioAcao.cs" />
+    <Compile Include="Seguranca\PermissaoGrupoAcao.cs" />
+    <Compile Include="Seguranca\Recurso.cs" />
+    <Compile Include="Seguranca\SetorUsuario.cs" />
+    <Compile Include="Seguranca\TipoSetorCliente.cs" />
+    <Compile Include="Seguranca\Usuario.cs" />
+    <Compile Include="Sistema\Auditoria.cs" />
+    <Compile Include="Sistema\LogErro.cs" />
+    <Compile Include="Sistema\Notificacao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Globalsys\Globalsys.csproj">
+      <Project>{2b19c424-728f-4159-b762-7632043ce409}</Project>
+      <Name>Globalsys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="AtiveEngenharia.Dominio" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Ative.Colaborador.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Ative.Empresa.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Ative.EmpresaColaborador.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Ative.Setor.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.BaixaDeMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.CotaMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.EntradaMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.ItemBaixaMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.ItemCotaMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.ItemEntradaMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.ItemLiberarMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.ItemLiberarMaterialFormatado.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.ItemSolicitarMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.ItemSolicitarMaterialFormatado.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.LiberarMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.LiberarMaterialFormatada.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.Material.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.MaterialEmpresa.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.MaterialFormatado.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.SolicitarMaterial.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Estoque.SolicitarMaterialFormatada.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Financeiro.CentroDeCusto.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Seguranca.Acao.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Seguranca.Funcao.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Seguranca.Grupo.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Seguranca.Membro.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Seguranca.PermisaoUsuarioAcao.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Seguranca.PermissaoGrupoAcao.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Seguranca.Recurso.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Seguranca.Usuario.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Sistema.Auditoria.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Sistema.Cidade.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Sistema.Estado.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Sistema.LogErro.datasource" />
+    <None Include="Properties\DataSources\AtiveEngenharia.Dominio.Sistema.Notificacao.datasource" />
+    <None Include="Properties\DataSources\DadosDespesasKS.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportHistoricoSaldoMateriais.rdlc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
